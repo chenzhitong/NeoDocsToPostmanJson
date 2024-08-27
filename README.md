@@ -7,10 +7,7 @@ A tool to convert Neo RPC documents into postman exported json data.
 ### Manually generated
 
 - Download or clone the GitHub project https://github.com/neo-project/neo-dev-portal
-- Go to the project folder and then to the `n3\reference\rpc` folder and copy the path,
-  such as `D:\neo-dev-portal\n3\reference\rpc`
-- Run the project and enter the path
-- Generate Postman exported json data
+- Run the project and enter the path, such as `D:\neo-dev-portal\n3\reference\rpc`
 - The generated results will be output on the console and in the `RpcServer.postman_collection.json` file
 
 ### Using online links (recommend)
@@ -24,3 +21,7 @@ https://docs.neo.org/RpcServer.postman_collection.json
 ![](assets/api_5.jpg)
 
 ![](assets/api_6.jpg)
+
+You can even check out the API description directly to the right!
+
+![](assets/api_7.jpg)
