@@ -56,6 +56,7 @@ namespace NeoDocsToPostmanJson
                         {
                             Raw = raw
                         },
+                        Url = new URL(),
                         Description = desc
                     }
                 });
@@ -69,7 +70,6 @@ namespace NeoDocsToPostmanJson
             var outputFileName = "RpcServer.postman_collection.json";
             File.WriteAllText(outputFileName, json);
             Console.WriteLine($"Save to {outputFileName}");
-            Console.ReadLine();
         }
     }
     public class LowercaseContractResolver : DefaultContractResolver

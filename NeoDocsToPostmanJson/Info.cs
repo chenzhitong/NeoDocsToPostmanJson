@@ -39,6 +39,8 @@
 
         public Body Body { get; set; } = new Body();
 
+        public URL Url { get; set; }
+
         public string Description { get; set; }
     }
 
@@ -49,6 +51,15 @@
         public string Raw = "raw";
 
         public Options Options { get; set; } = new Options();
+    }
+
+    internal class URL
+    {
+        public string Raw = "seed1.neo.org:10332";
+
+        public string[] Host = { "seed1", "neo", "org" };
+
+        public string Port = "10332";
     }
 
     internal class Options
