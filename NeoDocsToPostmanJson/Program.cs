@@ -12,7 +12,15 @@ namespace NeoDocsToPostmanJson
     {
         static void Main(string[] args)
         {
-            var defaultPath = "D:\\1Code\\chen\\neo-dev-portal\\docs\\n3\\reference\\rpc";
+            var defaultPath = string.Empty;
+            if (args.Length == 1 && !string.IsNullOrEmpty(args[0])) 
+            {
+                defaultPath = args[0];
+            }
+            if (string.IsNullOrEmpty(defaultPath))
+            {
+                defaultPath = "D:\\1Code\\chen\\neo-dev-portal\\docs\\n3\\reference\\rpc";
+            }
             if (!Directory.Exists(defaultPath))
             {
                 Console.WriteLine("Please download neo-dev-portal project https://github.com/neo-project/neo-dev-portal\r\nand input the path of neo RPC docs, such as: D:\\neo-dev-portal\\n3\\reference\\rpc");
