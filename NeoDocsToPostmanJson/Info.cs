@@ -5,6 +5,8 @@
         public Info Info { get; set; }
 
         public List<Item> Item { get; set; } = new List<Item>();
+
+        public List <Variable> Variable { get; set; } = new List<Variable>();
     }
 
     internal class Info
@@ -31,6 +33,13 @@
         public Array Response { get; set; } = Array.Empty<string>();
     }
 
+    internal class Variable
+    {
+        public string Key = "URL";
+
+        public string Value = "seed1.neo.org:10332";
+    }
+
     internal class Request
     {
         public string Method = "POST";
@@ -55,11 +64,9 @@
 
     internal class URL
     {
-        public string Raw = "seed1.neo.org:10332";
+        public string Raw = "{{URL}}";
 
-        public string[] Host = { "seed1", "neo", "org" };
-
-        public string Port = "10332";
+        public string[] Host = { "{{URL}}" };
     }
 
     internal class Options

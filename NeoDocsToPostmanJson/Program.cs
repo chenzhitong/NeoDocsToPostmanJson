@@ -62,6 +62,7 @@ namespace NeoDocsToPostmanJson
                     }
                 });
             }
+            export.Variable.Add(new Variable());
 
             var json = JsonConvert.SerializeObject(export, new JsonSerializerSettings{
                 ContractResolver = new LowercaseContractResolver(),
