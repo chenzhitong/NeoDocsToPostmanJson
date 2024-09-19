@@ -38,12 +38,12 @@ namespace NeoDocsToPostmanJson
                 document.Parse(File.ReadAllText(file));
                 var title = document.Blocks.FirstOrDefault(p => p.Type == MarkdownBlockType.Header)?.ToString().Trim();
                 var name = title.Split(' ')[0];
-                var raw = document.Blocks.FirstOrDefault(p => p.Type == MarkdownBlockType.Code)?.ToString().Trim();
+                var raw = document.Blocks.FirstOrDefault(p => p.Type == MarkdownBlockType.Code && p.ToString().Contains("jsonrpc"))?.ToString().Trim();
                 var desc = string.Empty;
                 foreach (var item in File.ReadAllLines(file).Skip(1))
                 {
                     if (string.IsNullOrEmpty(item.Trim())) continue;
-                    if (item.Contains("Example") || item.Contains("```")) break;
+                    if (item == "## Example") break;
                     desc += item + "\r\n";
                 }
                 desc = desc.Replace(":::", string.Empty).Trim('\r', '\n');
